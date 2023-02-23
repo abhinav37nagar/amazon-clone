@@ -8,7 +8,6 @@ export async function loader({ params }) {
   const response = await fetch(url);
   const products = await response.json();
 
-  console.log(products);
   return { products };
 }
 
@@ -27,10 +26,6 @@ const Products = ({ updateCall }) => {
       if (criteria === 'price-asc') return a.price - b.price;
       return b.rating.rate - a.rating.rate;
     });
-    console.log(
-      'sorted',
-      sorted.map((val) => val.rating.rate)
-    );
     setSortedProducts([...sorted]);
   }, [criteria, products]);
 
