@@ -16,7 +16,7 @@ const Product = ({ details }) => {
       JSON.stringify({ count: count, price: temp })
     );
     updateCall();
-  }, [details.id, details.price, count]);
+  }, [details.id, details.price, count, updateCall]);
 
   const addToCart = () => {
     setCount(count + 1);
